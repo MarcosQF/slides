@@ -1,0 +1,78 @@
+/* @theme rose-pine */
+
+@import 'default';
+
+/* Paleta oficial Rosé Pine */
+section {
+  background-color: #191724; /* Base */
+  color: #e0def4;            /* Text */
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  font-size: 32px;
+  padding: 50px 70px;
+}
+
+/* Títulos */
+h1 {
+  color: #ebbcba; /* Rose */
+  border-bottom: 2px solid #21202e; /* Highlight Low */
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #f6c177; /* Gold */
+}
+
+h3, h4, h5, h6 {
+  color: #c4a7e7; /* Iris */
+}
+
+/* Destaques e Links */
+strong {
+  color: #eb6f92; /* Love (Vermelho/Rosa escuro) */
+}
+
+a {
+  color: #31748f; /* Pine (Azul/Verde) */
+  text-decoration: none;
+}
+
+/* Códigos */
+code {
+  background-color: #26233a; /* Overlay */
+  color: #9ccfd8;            /* Foam (Ciano) */
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+pre {
+  background-color: #1f1d2e; /* Surface */
+  border: 1px solid #26233a; /* Overlay */
+  border-radius: 8px;
+  font-size: 0.65em; /* <-- Diminui o tamanho da fonte do código */
+  padding: 15px;     /* <-- Ajusta o espaço interno para ficar mais compacto */
+  margin: 15px 0;    /* <-- Reduz o espaço entre o texto e o código */
+  line-height: 1.4;  /* <-- Deixa as linhas de código mais baixinhas */
+}
+
+pre code {
+  color: #e0def4;
+  background: transparent;
+  font-size: inherit;
+}
+
+/* Slide de Capa (quando usar <!-- _class: lead -->) */
+section.lead {
+  background-color: #1f1d2e; /* Surface */
+  text-align: center;
+}
+
+section.lead h1 {
+  color: #c4a7e7; /* Iris */
+  border-bottom: none;
+}
+
+section.lead h2 {
+  color: #908caa; /* Subtle */
+}
