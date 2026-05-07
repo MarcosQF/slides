@@ -65,9 +65,9 @@ pre { font-size: 18px; line-height: 1.2; margin: 5px 0; padding: 10px; }
 p { margin: 5px 0; font-size: 24px; }
 </style>
 
-## 💻 Código: DataGrid 
+## Código: DataGrid 
 
-**`component.html`**
+**`grid.html`**
 ```html
 <ejs-grid [dataSource]="itensCarrinho" [allowFiltering]="true">
   <e-columns>
@@ -78,11 +78,11 @@ p { margin: 5px 0; font-size: 24px; }
 </ejs-grid>
 ```
 
-**`component.ts`**
+**`grid.ts`**
 ```typescript
-import { GridModule, FilterService } from '@syncfusion/ej2-angular-grids';
-
-export class CarrinhoComponent {
+imports: [GridModule],
+providers: [FilterService],
+export class Grid {
   public itensCarrinho: Object[] = [
     { produto: 'Monitor Ultrawide', qtd: 1, preco: 1500.00 },
     { produto: 'Teclado Mecânico', qtd: 2, preco: 350.50 }
@@ -113,7 +113,7 @@ p { margin: 5px 0; font-size: 24px; }
 
 ## Código: NumericTextBox
 
-**`component.html`**
+**`input.html`**
 ```html
 <label>Quantidade:</label>
 <ejs-numerictextbox 
@@ -123,18 +123,15 @@ p { margin: 5px 0; font-size: 24px; }
     format="n0">
 </ejs-numerictextbox>
 ```
-
-**`component.ts`**
+**`input.ts`**
 ```typescript
-import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
-
+imports: [NumericTextBoxModule],
 export class CarrinhoComponent {
   public quantidadeItens: number = 1;
   public minQtd: number = 1;
-  public estoqueMax: number = 5; // Limite máximo de compra
+  public estoqueMax: number = 5;
 }
 ```
-
 ---
 
 ## Componente: Modais (Dialog)
@@ -156,7 +153,7 @@ pre { font-size: 18px; line-height: 1.2; margin: 5px 0; padding: 10px; }
 p { margin: 5px 0; font-size: 24px; }
 </style>
 #### Código: Dialog
-**`component.html`**
+**`modal.html`**
 ```html
 <button ejs-button (click)="abrirModal()">Finalizar Compra</button>
 <ejs-dialog [(visible)]="modalAberto" header="Confirmar" [isModal]="true" [showCloseIcon]="true" width="400px">
@@ -169,10 +166,9 @@ p { margin: 5px 0; font-size: 24px; }
     </ng-template>
 </ejs-dialog>
 ```
-**`component.ts`**
+**`modal.ts`**
 ```typescript
-import { DialogModule } from '@syncfusion/ej2-angular-popups';
-import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+imports: [DialogModule, ButtonModule],
 export class CarrinhoComponent {
   public modalAberto: boolean = false;
   abrirModal(): void {
@@ -206,7 +202,7 @@ p { margin: 5px 0; font-size: 24px; }
 
 ### Código: Gráfico de Pizza 
 
-**`component.html`**
+**`charts.html`**
 ```html
 <ejs-accumulationchart id="grafico-custos">
     <e-accumulation-series-collection>
@@ -216,18 +212,13 @@ p { margin: 5px 0; font-size: 24px; }
 </ejs-accumulationchart>
 ```
 
-**`component.ts`**
+**`charts.ts`**
 ```typescript
-import {
-  AccumulationChartModule,
-  PieSeriesService,
-  AccumulationLegendService,
-  AccumulationTooltipService
-} from '@syncfusion/ej2-angular-charts';
-
+imports: [AccumulationChartModule],
+providers: [PieSeriesService, AccumulationLegendService ,AccumulationTooltipService],
 export class CarrinhoComponent {
   public dadosCusto: Object[] = [
-    { tipo: 'Subtotal dos Produtos', valor: 2201.00 },
+    { tipo: 'Subtotal dos Produtos', valor: 201.00 },
     { tipo: 'Frete e Entrega', valor: 45.00 },
     { tipo: 'Taxas', valor: 12.00 }
   ];
